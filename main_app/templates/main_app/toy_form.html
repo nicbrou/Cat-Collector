@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %} {% if object %}
+<h1>Edit<span class="teal-text">{{object.name}}</span></h1>
+
+{% else %} {% endif %}
+
+<form action="" method="post">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <input type="submit" value="Submit" class="btn" />
+</form>
+
+<!-- When using CBVs, django framework will look for files in templates/main_app/ -->
+{% endblock %}
